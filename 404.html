@@ -1,19 +1,45 @@
 <!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#0b0f17" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="태수조작단" />
-    <link rel="icon" type="image/png" href="/icons/app-192.png" />
-    <link rel="apple-touch-icon" href="/icons/app-180.png" />
-    <title>태수조작단 · RAIDROOM</title>
-    <script type="module" crossorigin src="/assets/index-Hz9QTS_N.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DHo2S9UW.css">
-  <link rel="manifest" href="/manifest.webmanifest"></head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RAIDROOM · 서비스 종료</title>
+<meta name="theme-color" content="#0b0f17">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/app-192.png">
+<link rel="apple-touch-icon" href="/icons/app-180.png">
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    min-height: 100vh; display: grid; place-items: center; padding: 24px 16px;
+    background: radial-gradient(900px 520px at 50% -10%, rgba(201, 169, 97, 0.14), transparent 60%), #06080d;
+    color: #d5d9e0; text-align: center;
+    font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  }
+  main { width: min(440px, 100%); padding: 36px 28px 30px; border: 1px solid rgba(201, 169, 97, 0.35); background: linear-gradient(180deg, rgba(21, 27, 38, 0.95), rgba(10, 13, 20, 0.95)); }
+  img { width: 88px; height: 88px; }
+  .brand { margin-top: 10px; font: 700 26px/1 Georgia, "Times New Roman", serif; letter-spacing: 0.12em; color: #ecd28f; }
+  .sub { margin-top: 8px; font-size: 13px; letter-spacing: 0.4em; color: #c9b88a; }
+  h1 { margin: 28px 0 0; font-size: 20px; line-height: 1.4; color: #f1ede4; word-break: keep-all; }
+  p { margin: 12px 0 0; font-size: 15px; line-height: 1.7; color: #aab1bd; word-break: keep-all; }
+  .note { margin-top: 22px; padding-top: 16px; border-top: 1px solid #252b36; font-size: 13px; color: #8a92a0; }
+</style>
+</head>
+<body>
+<main>
+  <img src="/img/emblem.png" alt="">
+  <div class="brand">RAIDROOM</div>
+  <div class="sub">태수조작단</div>
+  <h1>RAIDROOM 운영을 마쳤습니다</h1>
+  <p>2026년 11월 10일부로 공대 일정 · 편성 서비스를 종료했습니다.<br>그동안 함께해 주셔서 감사합니다.</p>
+  <p class="note">휴대폰 홈 화면에 추가한 앱은 지우셔도 됩니다.</p>
+</main>
+<script>
+  // Leftovers of the old app: its service worker and cached files.
+  if ("serviceWorker" in navigator) navigator.serviceWorker.getRegistrations().then((list) => list.forEach((item) => item.unregister())).catch(() => {});
+  if ("caches" in window) caches.keys().then((keys) => keys.forEach((key) => caches.delete(key))).catch(() => {});
+</script>
+</body>
 </html>
